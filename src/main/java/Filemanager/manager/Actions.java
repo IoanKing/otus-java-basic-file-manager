@@ -117,6 +117,7 @@ public class Actions {
     }
 
     public void getFileList(Path path) {
+        System.out.println("---Список файлов: ---");
         try (DirectoryStream<Path> files = Files.newDirectoryStream(path)) {
             for (Path file : files)
                 System.out.println(file.getFileName());
@@ -131,6 +132,7 @@ public class Actions {
             getFileList(path);
             return;
         }
+        System.out.println("---Список файлов: ---");
         try (DirectoryStream<Path> files = Files.newDirectoryStream(path)) {
             BasicFileAttributes fileAttr;
             System.out.printf("%-30s %-20s %-30s", "Наименование", "Размер (byte)", "Дата изменения");
@@ -153,6 +155,7 @@ public class Actions {
 
     public void setDirectory() {
         currentPath = currentPath.toAbsolutePath().getParent();
+        System.out.println("Директория изменена.");
     }
 
     public void setDirectory(String filename) {
@@ -164,6 +167,7 @@ public class Actions {
         }
         if (Files.exists(Path.of(newPath))) {
             currentPath = Path.of(newPath);
+            System.out.println("Директория изменена.");
             return;
         }
         System.out.println("Указанной директории не существует.");
@@ -288,10 +292,10 @@ public class Actions {
     }
 
     public static void printCommandList() {
-        System.out.println("-------------------- /[command] -------------------------------");
+        System.out.println("--------------------Доступные команды: /[command] -------------");
         System.out.print("|");
         Arrays.stream(ManagerCommand.values()).map(ManagerCommand::getName).forEach(x -> System.out.print(" " + x + " |"));
         System.out.println();
-        System.out.println("---------------------------------------------------------------");
+        System.out.println("------------------------Текущая директория----------------------");
     }
 }
