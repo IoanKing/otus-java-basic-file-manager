@@ -33,3 +33,4 @@ public enum ManagerCommand {
         return "    /" + name + description;
     }
 }
+
