@@ -1,11 +1,11 @@
 package Filemanager;
 
-import Filemanager.Utils.Info;
+import Filemanager.Utils.ProjectInfo;
 import Filemanager.manager.Actions;
 
-public class Main {
+public class MainApp {
     public static void main(String[] args) {
-        Info.aboutProject();
+        ProjectInfo.aboutProject();
         Actions.appStart();
     }
 }

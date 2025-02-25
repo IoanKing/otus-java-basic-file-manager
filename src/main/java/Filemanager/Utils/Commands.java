@@ -1,6 +1,6 @@
 package Filemanager.Utils;
 
-public enum ManagerCommand {
+public enum Commands {
     HELP("help", " [/command] - Вывод в консоль всех поддерживаемых команд. [/command] - справка по команде."),
     LS("ls", " [-i] - распечатывает список файлов и директорий текущего каталога. Ключ [-i] выводит детальную информацию о файле."),
     CD("cd", " [path] | [..] - переход в указанную поддиректорию | переход в родительский каталог."),
@@ -15,7 +15,7 @@ public enum ManagerCommand {
     private String name;
     private String description;
 
-    ManagerCommand(String name, String description) {
+    Commands(String name, String description) {
         this.name = name;
         this.description = description;
     }
