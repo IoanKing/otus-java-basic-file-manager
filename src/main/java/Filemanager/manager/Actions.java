@@ -34,6 +34,8 @@ public class Actions {
     public void get(String action) {
         String[] command = action.split(" ");
         String currentCommand = command[0].substring(1);
+        if (!command[0].startsWith("/"))
+            return;
         switch (currentCommand) {
             case "help":
                 if (command.length > 1)
