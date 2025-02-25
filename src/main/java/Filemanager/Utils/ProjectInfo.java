@@ -1,8 +1,6 @@
 package Filemanager.Utils;
 
-import java.util.Arrays;
-
-public class Info {
+public class ProjectInfo {
     public static void aboutApp() {
         System.out.println("===========================================");
         System.out.println("======= КОНСОЛЬНЫЙ ФАЙЛОВЫЙ МЕНЕДЖЕР ======");

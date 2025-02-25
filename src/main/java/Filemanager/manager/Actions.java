@@ -1,6 +1,6 @@
 package Filemanager.manager;
 
-import Filemanager.Utils.ManagerCommand;
+import Filemanager.Utils.Commands;
 
 import java.io.File;
 import java.io.IOException;
@@ -111,11 +111,11 @@ public class Actions {
     }
 
     public void getHelp() {
-        Arrays.stream(ManagerCommand.values()).forEach(System.out::println);
+        Arrays.stream(Commands.values()).forEach(System.out::println);
     }
 
     public void getHelp(String command) {
-        System.out.println(ManagerCommand.valueOf(command).toString());
+        System.out.println(Commands.valueOf(command).toString());
     }
 
     public void getFileList(Path path) {
@@ -296,7 +296,7 @@ public class Actions {
     public static void printCommandList() {
         System.out.println("--------------------Доступные команды: /[command] -------------");
         System.out.print("|");
-        Arrays.stream(ManagerCommand.values()).map(ManagerCommand::getName).forEach(x -> System.out.print(" " + x + " |"));
+        Arrays.stream(Commands.values()).map(Commands::getName).forEach(x -> System.out.print(" " + x + " |"));
         System.out.println();
         System.out.println("------------------------Текущая директория----------------------");
     }
